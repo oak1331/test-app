@@ -1,6 +1,5 @@
 <h1>投稿ページ</h1>
-<%= form_with model: @tweet, local: true do |form| %>
-  <%= form.text_field :name, placeholder: "Nickname" %>
-  <%= form.text_area :text, placeholder: "text", rows: "10" %>
+<%= form_with model: @post, local: true do |form| %>
+  <%= form.text_area :memo, placeholder: "memo", rows: "10" %>
   <%= form.submit "投稿する" %>
 <% end %>
