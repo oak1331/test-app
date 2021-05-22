@@ -1,0 +1,6 @@
+<%= link_to "投稿ページ", new_post_path %>
+
+<% @posts.each do |post| %>
+  <%= post.memo %>
+  <%= post.created_at %>
+<% end %>
