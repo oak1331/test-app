@@ -10,7 +10,7 @@
       <div class="col-12 col-lg-6 col-xl-6 p-2">
           <div class="container">
             <div class="row justify-content-center">
-              <% if user_signed_in? && current_user.id == @post.user_id %>
+              <% if user_signed_in? && current_user.id == @post.user %>
                 <div class="col-12 text-end">
                   <%= link_to "編集", edit_post_path(@post.id), class: "btn btn-sm btn-outline-secondary text-decoration-none m-2" %>
                   <%= link_to "削除", post_path(@post.id), method: :delete, class: "btn btn-sm btn-outline-secondary text-decoration-none m-2" %>
