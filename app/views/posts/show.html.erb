@@ -1,0 +1,30 @@
+  <div class="container">
+    <div class="row my-0 text-center">
+      <div class="col">
+        <h2 class="mb-5">投稿詳細</h2>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row mb-5 justify-content-center">
+      <div class="col-12 col-lg-6 col-xl-6 p-2">
+          <div class="container">
+            <div class="row justify-content-center">
+              <% if user_signed_in? && current_user.id == @post.user_id %>
+                <div class="col-12 text-end">
+                  <%= link_to "編集", edit_post_path(@post.id), class: "btn btn-sm btn-outline-secondary text-decoration-none m-2" %>
+                  <%= link_to "削除", post_path(@post.id), method: :delete, class: "btn btn-sm btn-outline-secondary text-decoration-none m-2" %>
+                </div>
+              <% end %>
+              <div class="col-12 my-2">
+                <div class="post-nickname">コメント</div>
+                <div class="col border rounded p-2 text-reset">
+                  <%= @post.memo %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -8,6 +8,6 @@
 <%= link_to "投稿ページ", new_post_path %>
 
 <% @posts.each do |post| %>
-  <%= post.memo %>
+  <%= link_to post.memo, post_path(post.id), class: "text-start link-secondary" %>
   <%= post.created_at %>
 <% end %>
