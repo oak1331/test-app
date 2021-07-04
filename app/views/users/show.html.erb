@@ -1,0 +1,12 @@
+<%= render partial: "mypage", locals: { user: @user } %>
+
+<div class="container ">
+  <div class="row mb-5 align-items-center">
+    <div class="col">
+      <h4 class="mb-0"><%= @user.name %>さんの投稿一覧</h4>
+    </div>
+  </div>
+  <div class="row row-cols-3">
+    <%# <%= render partial: "posts/post", collection: @posts %> %>
+  </div>
+</div>

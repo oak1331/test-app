@@ -9,5 +9,5 @@
 
 <% @posts.each do |post| %>
   <%= link_to post.memo, post_path(post.id), class: "text-start link-secondary" %>
-  <%= post.created_at %>
+  <%= link_to post.user.name, user_path(post.user.id), class: "text-start link-secondary" %>
 <% end %>
