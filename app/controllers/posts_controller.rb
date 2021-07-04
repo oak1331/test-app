@@ -12,7 +12,12 @@ class PostsController < ApplicationController
   end
 
   def create
-    Post.create(post_params)
+    @post = Post.create(post_params)
+    if @post.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   def edit
@@ -41,7 +46,7 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:memo)
+    params.require(:post).permit(:memo).merge(user_id: current_user.id)
   end
 
   def move_to_index
