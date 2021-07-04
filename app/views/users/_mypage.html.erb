@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row mb-5 align-items-center">
+    <div class="col">
+      <h4 class="mb-0"><%= user.name %>さんのマイページ</h4>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-4 p-2">
+      <div class="container">
+        <ul class="list-group text-center">
+          <li class="list-group-item"><%= link_to "マイページ", user_path(user), class: "text-dark text-decoration-none" %></li>
+          <% if user.id == current_user.id %>
+            <li class="list-group-item"><%= link_to "アカウント編集", edit_user_path(user.id), class: "text-dark text-decoration-none" %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <div class="col-12 col-lg-5 p-2">
+      <div class="container">
+        <div class="row justify-content-center p-3">
+          <div class="col-12 text-center">
+            <%= user.name %>
+          </div>
+        </div>
+        <div class="row text-center text-secondary pt-3">
+          <div class="col-4">
+            <%= user.posts.length %><br>投稿
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
