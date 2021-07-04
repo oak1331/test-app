@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row my-5 justify-content-center">
+    <div class="col-12 col-md-6 col-lg-4 p-2">
+      <div class="container">
+        <div class="row justify-content-center">
+          <%= form_with model: @user, local: true do |f|%>
+            <h2>アカウントの編集</h2>
+            <div class="nickname-box col-12 mb-3">
+              <%= f.label :name %><br />
+              <%= f.text_field :name, autofocus: true, maxlength: "20" %>
+            </div>
+            <div class="email-box col-12 mb-3">
+              <%= f.label :email %><br />
+              <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+            </div>
+            <div class="password-box col-12 mb-2">
+              <%= f.label :password %> <i>(6文字以上入力してください)</i><br />
+              <%= f.password_field :password, autocomplete: "new-password" %>
+            </div>
+            <div class="password-box col-12 mb-3">
+              <%= f.label :password_confirmation %><br />
+              <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+            </div>
+            <div class="password-box col-12 mb-3">
+              <%= f.label :current_password %><br />
+              <%= f.password_field :current_password, autocomplete: "current-password" %>
+            </div>
+            <div class="login-box col-12 pt-4 mb-5">
+              <%= f.submit "更新" %>
+            </div>
+            <div class="col-12 pt-4 mb-2 text-end">
+              <%= link_to "マイページに戻る", user_path(@user), class: "text-decoration-none" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
