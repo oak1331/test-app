@@ -14,6 +14,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    @posts = @user.posts.order('created_at DESC')
+  end
+
   private
 
   def set_user
