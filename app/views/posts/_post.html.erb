@@ -1,0 +1,12 @@
+<div class="col-12 col-lg-6 col-xl-4 p-2">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col text-truncate d-block w-100">
+        <%= link_to post.user.name, user_path(post.user.id), class: "text-start link-secondary" %>
+      </div>
+      <div class="col-12 text-center text-reset text-truncate d-block w-100">
+        <%= link_to post.memo, post_path(post.id), class: "link-dark" %>
+      </div>
+    </div>
+  </div>
+</div>
