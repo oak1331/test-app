@@ -28,3 +28,46 @@
       </div>
     </div>
   </div>
+
+<div class="container">
+  <div class="row my-0 text-center">
+    <div class="col">
+      <h2 class="mb-5">コメント一覧</h2>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row mb-5 justify-content-center">
+    <div class="col-12 col-lg-6 col-xl-6 p-2">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 my-3 p-2 text-reset text-truncate d-block w-100 post-title border-bottom">
+              <% if user_signed_in? %>
+              <%= form_with model: [@post, @comment], local: true do |form| %>
+                <%= form.text_area :text, placeholder: "コメントする", class: "form-control" %>
+                <div class="text-end my-2 comment-box">
+                  <%= form.submit "送信" %>
+                </div>
+              <% end %>
+            <% else %>
+              <div class="text-center text-dark"><p>コメントの投稿には新規登録/ログインが必要です</p></div>
+            <% end %>
+          </div>
+          <% @comments.each do |comment| %>
+            <div class="col text-truncate d-block w-100 d-flex align-items-center">
+              <%= link_to @post.user.name, user_path(@post.user.id), class: "post-nickname text-start" %>
+            </div>
+            <% if user_signed_in? && current_user.id == comment.user_id %>
+              <div class="col text-end">
+                <%= link_to "削除", post_comment_path(comment.post.id, comment.id), method: :delete, class: "btn btn-sm btn-outline-secondary text-decoration-none m-1" %>
+              </div>
+            <% end %>
+            <div class="col-12 border-bottom mb-3 text-break">
+              <%= comment.text %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
