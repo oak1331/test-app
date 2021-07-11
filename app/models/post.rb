@@ -4,4 +4,5 @@ class Post < ApplicationRecord
   has_one_attached :image
 
   validates :memo, presence: true
+  validates :image
 end
