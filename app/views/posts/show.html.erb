@@ -55,7 +55,7 @@
           </div>
           <% @comments.each do |comment| %>
             <div class="col text-truncate d-block w-100 d-flex align-items-center">
-              <%= link_to @post.user.name, user_path(@post.user.id), class: "post-nickname text-start" %>
+              <%= link_to @post.user.name, user_path(@post.user.id), class: "text-start text-decoration-none link-dark" %>
             </div>
             <% if user_signed_in? && current_user.id == comment.user_id %>
               <div class="col text-end">
