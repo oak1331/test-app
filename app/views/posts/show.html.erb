@@ -19,6 +19,9 @@
               <div class="col-12 my-2">
                 <div class="post-nickname">コメント</div>
                 <div class="col border rounded p-2 text-reset">
+                  <div class="col-12 justify-content-center px-0">
+                    <%= image_tag( @post.image.variant(resize: '320x180') ) %>
+                  </div>
                   <%= @post.memo %>
                 </div>
               </div>

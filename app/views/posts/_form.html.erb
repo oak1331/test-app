@@ -3,9 +3,16 @@
     <div class="col-12 col-md-10 col-lg-6 p-2">
       <div class="container">
         <div class="row justify-content-center">
-          <%= form_with model: @post, local: true do |form| %>
-            <%= form.text_area :memo, placeholder: "memo", rows: "10" %>
-            <%= form.submit "投稿する" %>
+          <%= form_with model: @post, local: true do |f| %>
+            <div class="col-12 mb-3">
+                <%= f.label :"コメントを入力してください" %><br />
+                <%= f.text_area :memo, placeholder: "memo", class: "form-control" %>
+              </div>
+            <div class="col-12 mb-4">
+                <%= f.label :"画像を選択してください" %><br />
+                <%= f.file_field :image %>
+              </div>
+            <%= f.submit "投稿する" %>
           <% end %>
         </div>
       </div>

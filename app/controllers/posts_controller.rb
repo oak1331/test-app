@@ -49,7 +49,7 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:memo).merge(user_id: current_user.id)
+    params.require(:post).permit(:memo, :image).merge(user_id: current_user.id)
   end
 
   def move_to_index
