@@ -3,6 +3,8 @@ class Post < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_one_attached :image
 
-  validates :memo, presence: true
-  validates :image
+  with_options presence: true do
+    validates :memo
+    validates :image
+  end
 end
