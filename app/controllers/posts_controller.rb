@@ -42,6 +42,10 @@ class PostsController < ApplicationController
     redirect_to root_path
   end
 
+  def search
+    @posts = Post.search(params[:keyword])
+  end
+
   private
 
   def set_post
