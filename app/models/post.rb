@@ -7,4 +7,12 @@ class Post < ApplicationRecord
     validates :memo
     validates :image
   end
+
+  def self.search(search)
+    if search != ""
+      Post.where('memo LIKE(?)', "%#{search}%")
+    else
+      Post.includes(:user)
+    end
+  end
 end
