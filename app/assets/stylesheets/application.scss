@@ -1,4 +1,5 @@
 @import '@fortawesome/fontawesome-free/scss/fontawesome';
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
 
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
@@ -18,4 +19,5 @@
 
  * {
   box-sizing: border-box;
+  font-family: 'Noto Sans JP', sans-serif;
 }
