@@ -2,7 +2,9 @@
   <div class="post-box">
     <div class="container">
       <div class="row justify-content-center">
-        <%= link_to image_tag( post.image.variant(resize: '320x180') ), post_path(post.id), class: "col-12 justify-content-center text-center px-0" %>
+        <div class="post-image">
+          <%= link_to image_tag( post.image.variant(resize: '320x180') ), post_path(post.id), class: "col-12 justify-content-center text-center px-0" %>
+        </div>
         <div class="col text-truncate d-block w-100">
           <%= link_to post.user.name, user_path(post.user.id), class: "text-start link-secondary text-decoration-none" %>
         </div>
