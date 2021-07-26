@@ -10,7 +10,7 @@
               </div>
             <div class="col-12 mb-4">
                 <%= f.label :"画像を選択してください" %><br />
-                <%= f.file_field :image %>
+                <%= f.file_field :images, multiple: true %>
               </div>
             <%= f.submit "投稿する" %>
           <% end %>
