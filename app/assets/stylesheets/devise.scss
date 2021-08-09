@@ -27,3 +27,8 @@
   border-radius: 3px;
   background: linear-gradient(to bottom, #ffb990, #fa9a62);
 }
+
+.login-box input[type="submit"]:hover {
+  background: #ffa571;
+  cursor: pointer;
+}
