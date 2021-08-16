@@ -9,7 +9,7 @@ class Post < ApplicationRecord
   end
 
   def self.search(search)
-    if search != ""
+    if search != ''
       Post.where('memo LIKE(?)', "%#{search}%")
     else
       Post.includes(:user)
