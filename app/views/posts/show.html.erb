@@ -11,6 +11,11 @@
         <div class="post-box">
           <div class="container">
             <div class="row justify-content-center">
+              <div class="col text-end">
+                <div id = "like_<%= @post.id %>">
+                  <%= render partial: "likes/like", locals: { post: @post } %>
+                </div>
+              </div>
               <% if user_signed_in? && current_user.id == @post.user %>
                 <div class="col-12 text-end">
                   <%= link_to "編集", edit_post_path(@post.id), class: "btn btn-sm btn-outline-secondary text-decoration-none m-2" %>
