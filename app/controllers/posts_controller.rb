@@ -4,7 +4,9 @@ class PostsController < ApplicationController
   before_action :move_to_index, only: [:edit, :update, :destroy]
 
   def index
-    @posts = Post.all.page(params[:page]).per(10)
+    @posts = Post.limit(6).order('created_at DESC')
+    like_posts = Post.includes(:liked_users).sort { |a, b| b.liked_users.length <=> a.liked_users.length }
+    @like_posts = like_posts.first(6)
   end
 
   def new
