@@ -52,6 +52,10 @@ class PostsController < ApplicationController
     @posts = Post.includes(:user).order('created_at DESC')
   end
 
+  def popular
+    @posts = Post.includes(:liked_users).sort { |a, b| b.liked_users.length <=> a.liked_users.length }
+  end
+
   private
 
   def set_post
