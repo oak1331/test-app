@@ -1,0 +1,15 @@
+<%= render partial: "search" %>
+
+<section class="latest-box">
+  <div class="container ">
+    <div class="row mb-5 align-items-center">
+      <div class="col">
+        <h4 class="mb-0">人気の投稿一覧</h4>
+        <div>Have a better date for you</div>
+      </div>
+    </div>
+    <div class="row row-cols-3">
+      <%= render partial: "post", collection: @posts %>
+    </div>
+  </div>
+</section>
